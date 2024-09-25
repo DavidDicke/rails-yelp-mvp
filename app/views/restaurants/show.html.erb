@@ -1,0 +1,19 @@
+<div class="container p-5">
+<h3><%= @restaurant.name %></h3>
+<div>
+  <p><%= @restaurant.address %></p>
+  <button class="btn btn-warning"><%= link_to @restaurant.category, url_for(action: @restaurant.category), class: "text-white text-decoration-none" %></button>
+</div>
+<div>
+  <% @restaurant.reviews.each do |review|%>
+    <div class="card">
+      <h4><%= "⭐️" * review.rating %></h4>
+      <p><%= review.content %></p>
+    </div>
+  <% end %>
+</div>
+<div class="bg-light mt-4">
+  <h4>Add a Review</h4>
+  <%= render "reviews/review_form" %>
+</div>
+</div>

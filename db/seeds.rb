@@ -7,3 +7,10 @@
 #   ["Action", "Comedy", "Drama", "Horror"].each do |genre_name|
 #     MovieGenre.find_or_create_by!(name: genre_name)
 #   end
+puts "creating Restaurants"
+Restaurant.create({name: "DaGiorgio's Restaurant Gesundbrunnen", address: "Grüntaler Str. 11, 13357 Berlin", category: "italian" })
+Restaurant.create({name: "Rocca Pizza & Pasta Berlin", address: "Gleimstraße 11, 10437 Berlin", category: "italian" })
+Restaurant.create({name: "Escendo Pizzeria", address: "Gleimstraße 21, 10437 Berlin", category: "italian" })
+Restaurant.create({name: "La Buvette - Weinbar & Bistrot Français", address: "Gleimstraße 41, 10437 Berlin", category: "french" })
+Restaurant.create({name: "Cafe Bar Restaurant Shan Shan", address: "Gleimstraße 24, 10437 Berlin", category: "chinese" })
+puts "db seeded"

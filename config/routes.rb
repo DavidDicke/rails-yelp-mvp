@@ -7,4 +7,15 @@ Rails.application.routes.draw do
 
   # Defines the root path route ("/")
   # root "posts#index"
+  resources :restaurants, only: [:index, :show, :new, :create ] do
+    collection do
+      get :italian
+      get :chinese
+      get :french
+      get :japanese
+      get :belgian
+    end
+
+    resources :reviews, only: :create
+  end
 end

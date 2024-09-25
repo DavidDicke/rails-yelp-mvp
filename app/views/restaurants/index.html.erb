@@ -1,0 +1,33 @@
+<div class="p-2 mb-2 bg-warning">
+  <% Restaurant::CATEGORIES.each do |category|  %>
+    <button class="btn border-white"> <%= link_to category, url_for(action: category), class: "text-white text-decoration-none" %></button>
+  <% end %>
+   <button class="btn border"> <%= link_to 'all', url_for(action: 'index'), class: "text-white text-decoration-none" %></button>
+</div>
+<div class="container">
+  <div class="row g-2">
+  <% @restaurants.each do |restaurant|%>
+    <div class="col-4">
+      <div class="card p-2 h-100">
+        <div class="d-flex flex-column justify-content-between">
+          <h3><%= restaurant.name %></h3>
+          <div>
+            <p><%= restaurant.address %></p>
+            <div class="d-flex justify-content-between">
+              <button class="btn btn-warning"><%= link_to restaurant.category, url_for(action: restaurant.category), class: "text-white text-decoration-none" %></button>
+              <button class="btn btn-primary"><%= link_to "show more", restaurant_path(restaurant), class: "text-white text-decoration-none" %></button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  <% end %>
+  <div class="col-4">
+      <div class="card p-2 h-100">
+        <div class="d-flex flex-column justify-content-center align-items-center h-100">
+          <button class="btn btn-primary h-100 w-100"><%= link_to "Add a restaurant", new_restaurant_path, class: "text-white text-decoration-none" %></button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
